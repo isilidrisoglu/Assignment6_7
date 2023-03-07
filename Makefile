@@ -1,5 +1,7 @@
 #! /usr/bin/env make
 
+all: website.pdf website.html
+
 website.pdf:  read_append copy_png
 	pandoc -s -o website.pdf Website/Website.md
 
