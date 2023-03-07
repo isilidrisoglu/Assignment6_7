@@ -1,5 +1,8 @@
 #! /usr/bin/env make
 
+website.pdf:  read_append copy_png
+	pandoc -s -o website.pdf Website/Website.md
+
 website.html: read_append pandoc-doc-sidebar copy_png
 	pandoc Website/Website.md -s --mathjax -f markdown+tex_math_double_backslash --template Website/toc-sidebar.html --toc  -o Website/website.html
 
