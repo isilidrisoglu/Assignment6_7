@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Pem Div">
+
+    <title>Not so accurate: Why accuracy is poor performance metric for computational social science applications</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://maxcdn.bootstrapcdn.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#abstract" id="toc-abstract">Abstract</a>
+          <ul>
+          <li><a href="#literature-review"
+          id="toc-literature-review">Literature Review</a></li>
+          <li><a href="#approach" id="toc-approach">Approach</a></li>
+          <li><a href="#results" id="toc-results">Results</a></li>
+          <li><a href="#conclusion"
+          id="toc-conclusion">Conclusion</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 id="abstract">Abstract</h1>
+<p>In this research report we discuss the use of accuracy as a
+performance metric in machine learning applications. We illustrate that
+accuracy fails to account for the social, spatial, and dynamic contexts
+within which measures and inferences are made. Our group offers a new
+metric that is more appropriate for computational social science
+projects that nest data science within society.</p>
+<h2 id="literature-review">Literature Review</h2>
+<p>Computational social science projects ranging from text as data, to
+image analysis, to high resolution violence forecasting have accelerated
+over the last several years. Many of their innovations have been driven
+by flexible machine learning algorithms. The Violence Early Warning
+System (ViEWS) provides one example. The teams most recent predictions
+are presented in the fiture below.</p>
+<p><img src="ViEWSMapGridCell.png" style="width:75.0%" /></p>
+<h2 id="approach">Approach</h2>
+<p>As the map makes clear, violence prediction has strong spatial
+components; yet these are not considered in bin-by-bin machine learning
+performance metrics, such as accuracy, AUC, precision, recall, F1, the
+Brier Score, and others.</p>
+<p>In each of these classes, the bin-by-metrics take on the form:</p>
+<p><span class="math display">\[
+\sum_{i}^{M} f(y_{i}, \hat{y}_{i})
+\]</span></p>
+<p>Where for accuracy, <span class="math inline">\(f\)</span> is
+replaced with the indicator functions:</p>
+<p><span class="math display">\[
+f = \mathcal(I)[y_{i}==\hat{y}_{i}]
+\]</span></p>
+<p>Our appreach relaxes this assumption by estimating and presenting a
+flow of mass across a generic graph that can be designed by the
+researchers.</p>
+<h2 id="results">Results</h2>
+<p>Our algorithm provides new insights into well and poor performing
+algorithms that are not available with accuracy or other bin-by-bin
+metrics.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Our work complements existing approaches to define domain specific
+cost functions. In the future we plan to incorporate quantum computing
+to speed up inference over multiple flows.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>
