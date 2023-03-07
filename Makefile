@@ -21,7 +21,7 @@ read_append: pandoc-doc-sidebar
 	cat conclusion.txt >> Website/Website.md
 
 pandoc-doc-sidebar:
-	git clone https://github.com/Mushiyo/pandoc-toc-sidebar.git Website/
+	cp -r template Website/
 	touch Website/Website.md
 	
 
